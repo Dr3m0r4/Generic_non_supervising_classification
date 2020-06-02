@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/project.dir/src/main.cpp.o  -o project  -lpthread -lstdc++ -lm 
