@@ -10,6 +10,8 @@ if ( CMAKE_COMPILER_IS_GNUCXX )
  set ( CMAKE_CXX_FLAGS "-Wall -pedantic ${CMAKE_CXX_FLAGS}" )
 endif()
 
+set ( CMAKE_THREAD_LIBS_INIT "-lX11 -lpthread ${CMAKE_THREAD_LIBS_INIT}")
+
 # C++11 #-------------------------------------------------------------------------------------------
 include ( CheckCXXCompilerFlag )
 
@@ -34,6 +36,7 @@ message ( STATUS "Compiler flags: ${CMAKE_CXX_FLAGS}" )
 
 # Sources #-----------------------------------------------------------------------------------------
 set ( ZZ3_HEADERS
+      src/CImg.h
     )
 
 set ( ZZ3_SOURCES

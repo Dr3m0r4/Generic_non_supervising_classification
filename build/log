@@ -1,0 +1,85 @@
+/usr/bin/ld : CMakeFiles/project.dir/src/main.cpp.o : dans la fonction « cimg_library::CImgDisplay::screen_width() » :
+main.cpp:(.text._ZN12cimg_library11CImgDisplay12screen_widthEv[_ZN12cimg_library11CImgDisplay12screen_widthEv]+0x30) : référence indéfinie vers « XOpenDisplay »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay12screen_widthEv[_ZN12cimg_library11CImgDisplay12screen_widthEv]+0xa2) : référence indéfinie vers « XCloseDisplay »
+/usr/bin/ld : CMakeFiles/project.dir/src/main.cpp.o : dans la fonction « cimg_library::CImgDisplay::screen_height() » :
+main.cpp:(.text._ZN12cimg_library11CImgDisplay13screen_heightEv[_ZN12cimg_library11CImgDisplay13screen_heightEv]+0x30) : référence indéfinie vers « XOpenDisplay »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay13screen_heightEv[_ZN12cimg_library11CImgDisplay13screen_heightEv]+0xa2) : référence indéfinie vers « XCloseDisplay »
+/usr/bin/ld : CMakeFiles/project.dir/src/main.cpp.o : dans la fonction « cimg_library::CImgDisplay::_handle_events(_XEvent const*) » :
+main.cpp:(.text._ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent[_ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent]+0x1d9) : référence indéfinie vers « XUnmapWindow »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent[_ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent]+0x23b) : référence indéfinie vers « XCheckWindowEvent »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent[_ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent]+0x32b) : référence indéfinie vers « XResizeWindow »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent[_ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent]+0x406) : référence indéfinie vers « XCheckWindowEvent »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent[_ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent]+0x45f) : référence indéfinie vers « XGetWindowAttributes »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent[_ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent]+0x47e) : référence indéfinie vers « XSync »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent[_ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent]+0x4bc) : référence indéfinie vers « XSetInputFocus »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent[_ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent]+0x601) : référence indéfinie vers « XCheckWindowEvent »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent[_ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent]+0x795) : référence indéfinie vers « XCheckWindowEvent »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent[_ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent]+0x7d9) : référence indéfinie vers « XLookupString »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent[_ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent]+0x813) : référence indéfinie vers « XQueryKeymap »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent[_ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent]+0x8b9) : référence indéfinie vers « XLookupString »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent[_ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent]+0x909) : référence indéfinie vers « XCheckWindowEvent »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent[_ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent]+0x9f1) : référence indéfinie vers « XCheckWindowEvent »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent[_ZN12cimg_library11CImgDisplay14_handle_eventsEPK7_XEvent]+0xa6b) : référence indéfinie vers « XCheckWindowEvent »
+/usr/bin/ld : CMakeFiles/project.dir/src/main.cpp.o : dans la fonction « cimg_library::CImgDisplay::_events_thread(void*) » :
+main.cpp:(.text._ZN12cimg_library11CImgDisplay14_events_threadEPv[_ZN12cimg_library11CImgDisplay14_events_threadEPv]+0x88) : référence indéfinie vers « XCheckTypedEvent »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay14_events_threadEPv[_ZN12cimg_library11CImgDisplay14_events_threadEPv]+0xbc) : référence indéfinie vers « XCheckMaskEvent »
+/usr/bin/ld : CMakeFiles/project.dir/src/main.cpp.o : dans la fonction « cimg_library::CImgDisplay::_set_colormap(unsigned long&, unsigned int) » :
+main.cpp:(.text._ZN12cimg_library11CImgDisplay13_set_colormapERmj[_ZN12cimg_library11CImgDisplay13_set_colormapERmj]+0x2b4) : référence indéfinie vers « XStoreColors »
+/usr/bin/ld : CMakeFiles/project.dir/src/main.cpp.o : dans la fonction « cimg_library::CImgDisplay::_map_window() » :
+main.cpp:(.text._ZN12cimg_library11CImgDisplay11_map_windowEv[_ZN12cimg_library11CImgDisplay11_map_windowEv]+0x5f) : référence indéfinie vers « XMapRaised »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay11_map_windowEv[_ZN12cimg_library11CImgDisplay11_map_windowEv]+0x8b) : référence indéfinie vers « XWindowEvent »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay11_map_windowEv[_ZN12cimg_library11CImgDisplay11_map_windowEv]+0xe7) : référence indéfinie vers « XGetWindowAttributes »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay11_map_windowEv[_ZN12cimg_library11CImgDisplay11_map_windowEv]+0x106) : référence indéfinie vers « XSync »
+/usr/bin/ld : CMakeFiles/project.dir/src/main.cpp.o : dans la fonction « cimg_library::CImgDisplay::_paint(bool) » :
+main.cpp:(.text._ZN12cimg_library11CImgDisplay6_paintEb[_ZN12cimg_library11CImgDisplay6_paintEb]+0x12b) : référence indéfinie vers « XSendEvent »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay6_paintEb[_ZN12cimg_library11CImgDisplay6_paintEb]+0x1b9) : référence indéfinie vers « XPutImage »
+/usr/bin/ld : CMakeFiles/project.dir/src/main.cpp.o : dans la fonction « cimg_library::CImgDisplay::_init_fullscreen() » :
+main.cpp:(.text._ZN12cimg_library11CImgDisplay16_init_fullscreenEv[_ZN12cimg_library11CImgDisplay16_init_fullscreenEv]+0xb9) : référence indéfinie vers « XDefaultScreen »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay16_init_fullscreenEv[_ZN12cimg_library11CImgDisplay16_init_fullscreenEv]+0xcc) : référence indéfinie vers « XBlackPixel »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay16_init_fullscreenEv[_ZN12cimg_library11CImgDisplay16_init_fullscreenEv]+0x145) : référence indéfinie vers « XCreateWindow »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay16_init_fullscreenEv[_ZN12cimg_library11CImgDisplay16_init_fullscreenEv]+0x17c) : référence indéfinie vers « XSelectInput »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay16_init_fullscreenEv[_ZN12cimg_library11CImgDisplay16_init_fullscreenEv]+0x19c) : référence indéfinie vers « XMapRaised »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay16_init_fullscreenEv[_ZN12cimg_library11CImgDisplay16_init_fullscreenEv]+0x1c8) : référence indéfinie vers « XWindowEvent »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay16_init_fullscreenEv[_ZN12cimg_library11CImgDisplay16_init_fullscreenEv]+0x1fc) : référence indéfinie vers « XGetWindowAttributes »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay16_init_fullscreenEv[_ZN12cimg_library11CImgDisplay16_init_fullscreenEv]+0x21b) : référence indéfinie vers « XSync »
+/usr/bin/ld : CMakeFiles/project.dir/src/main.cpp.o : dans la fonction « cimg_library::CImgDisplay::_desinit_fullscreen() » :
+main.cpp:(.text._ZN12cimg_library11CImgDisplay19_desinit_fullscreenEv[_ZN12cimg_library11CImgDisplay19_desinit_fullscreenEv]+0x39) : référence indéfinie vers « XUngrabKeyboard »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay19_desinit_fullscreenEv[_ZN12cimg_library11CImgDisplay19_desinit_fullscreenEv]+0x63) : référence indéfinie vers « XDestroyWindow »
+/usr/bin/ld : CMakeFiles/project.dir/src/main.cpp.o : dans la fonction « cimg_library::CImgDisplay::_assign(unsigned int, unsigned int, char const*, unsigned int, bool, bool) » :
+main.cpp:(.text._ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb[_ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb]+0x139) : référence indéfinie vers « XOpenDisplay »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb[_ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb]+0x396) : référence indéfinie vers « XVisualIDFromVisual »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb[_ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb]+0x3c2) : référence indéfinie vers « XGetVisualInfo »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb[_ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb]+0x420) : référence indéfinie vers « XFree »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb[_ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb]+0x655) : référence indéfinie vers « XCreateWindow »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb[_ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb]+0x6da) : référence indéfinie vers « XCreateSimpleWindow »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb[_ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb]+0x714) : référence indéfinie vers « XSelectInput »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb[_ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb]+0x75b) : référence indéfinie vers « XStoreName »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb[_ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb]+0x7c4) : référence indéfinie vers « XCreateColormap »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb[_ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb]+0x828) : référence indéfinie vers « XSetWindowColormap »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb[_ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb]+0x82d) : référence indéfinie vers « XAllocClassHint »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb[_ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb]+0x881) : référence indéfinie vers « XSetClassHint »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb[_ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb]+0x890) : référence indéfinie vers « XFree »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb[_ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb]+0x9af) : référence indéfinie vers « XCreateImage »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb[_ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb]+0x9df) : référence indéfinie vers « XInternAtom »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb[_ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb]+0xa0b) : référence indéfinie vers « XInternAtom »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb[_ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb]+0xa4c) : référence indéfinie vers « XSetWMProtocols »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb[_ZN12cimg_library11CImgDisplay7_assignEjjPKcjbb]+0xa91) : référence indéfinie vers « XGrabKeyboard »
+/usr/bin/ld : CMakeFiles/project.dir/src/main.cpp.o : dans la fonction « cimg_library::CImgDisplay::assign() » :
+main.cpp:(.text._ZN12cimg_library11CImgDisplay6assignEv[_ZN12cimg_library11CImgDisplay6assignEv]+0x159) : référence indéfinie vers « XFreeColormap »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay6assignEv[_ZN12cimg_library11CImgDisplay6assignEv]+0x173) : référence indéfinie vers « XDestroyWindow »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay6assignEv[_ZN12cimg_library11CImgDisplay6assignEv]+0x184) : référence indéfinie vers « XSync »
+/usr/bin/ld : CMakeFiles/project.dir/src/main.cpp.o : dans la fonction « cimg_library::CImgDisplay::resize(int, int, bool) » :
+main.cpp:(.text._ZN12cimg_library11CImgDisplay6resizeEiib[_ZN12cimg_library11CImgDisplay6resizeEiib]+0x28f) : référence indéfinie vers « XResizeWindow »
+/usr/bin/ld : main.cpp:(.text._ZN12cimg_library11CImgDisplay6resizeEiib[_ZN12cimg_library11CImgDisplay6resizeEiib]+0x2b6) : référence indéfinie vers « XGetWindowAttributes »
+/usr/bin/ld : CMakeFiles/project.dir/src/main.cpp.o : dans la fonction « cimg_library::CImgDisplay::move(int, int) » :
+main.cpp:(.text._ZN12cimg_library11CImgDisplay4moveEii[_ZN12cimg_library11CImgDisplay4moveEii]+0x88) : référence indéfinie vers « XMoveWindow »
+/usr/bin/ld : CMakeFiles/project.dir/src/main.cpp.o : dans la fonction « void cimg_library::CImgDisplay::_resize<unsigned char>(unsigned char, unsigned int, unsigned int, bool) » :
+main.cpp:(.text._ZN12cimg_library11CImgDisplay7_resizeIhEEvT_jjb[_ZN12cimg_library11CImgDisplay7_resizeIhEEvT_jjb]+0x131) : référence indéfinie vers « XCreateImage »
+/usr/bin/ld : CMakeFiles/project.dir/src/main.cpp.o : dans la fonction « void cimg_library::CImgDisplay::_resize<unsigned short>(unsigned short, unsigned int, unsigned int, bool) » :
+main.cpp:(.text._ZN12cimg_library11CImgDisplay7_resizeItEEvT_jjb[_ZN12cimg_library11CImgDisplay7_resizeItEEvT_jjb]+0x139) : référence indéfinie vers « XCreateImage »
+/usr/bin/ld : CMakeFiles/project.dir/src/main.cpp.o : dans la fonction « void cimg_library::CImgDisplay::_resize<unsigned int>(unsigned int, unsigned int, unsigned int, bool) » :
+main.cpp:(.text._ZN12cimg_library11CImgDisplay7_resizeIjEEvT_jjb[_ZN12cimg_library11CImgDisplay7_resizeIjEEvT_jjb]+0x139) : référence indéfinie vers « XCreateImage »
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/project.dir/build.make:84: project] Error 1
+make[1]: *** [CMakeFiles/Makefile2:76: CMakeFiles/project.dir/all] Error 2
+make: *** [Makefile:84: all] Error 2

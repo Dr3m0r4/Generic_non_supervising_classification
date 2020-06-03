@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/project_test.dir/src/mage.cpp.o  -o project_test  -lpthread -lstdc++ -lm 
