@@ -114,11 +114,9 @@ tinyexr.h
 CImg.h
 /home/dr3m/Travaux/Cimg_generic/src/CImg.h
 
-/home/dr3m/Travaux/Cimg_generic/src/main.cpp
+/home/dr3m/Travaux/Cimg_generic/src/tuto.cpp
 iostream
 -
 CImg.h
 /home/dr3m/Travaux/Cimg_generic/src/CImg.h
-mlpack/methods/kmeans/kmeans.hpp
--
 

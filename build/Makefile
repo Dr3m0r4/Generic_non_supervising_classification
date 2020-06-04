@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named project_tuto
+
+# Build rule for target.
+project_tuto: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 project_tuto
+.PHONY : project_tuto
+
+# fast build rule for target.
+project_tuto/fast:
+	$(MAKE) -f CMakeFiles/project_tuto.dir/build.make CMakeFiles/project_tuto.dir/build
+.PHONY : project_tuto/fast
+
+#=============================================================================
 # Target rules for targets named project
 
 # Build rule for target.
@@ -122,6 +135,36 @@ project: cmake_check_build_system
 project/fast:
 	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/build
 .PHONY : project/fast
+
+src/ML.o: src/ML.cpp.o
+
+.PHONY : src/ML.o
+
+# target to build an object file
+src/ML.cpp.o:
+	$(MAKE) -f CMakeFiles/project_tuto.dir/build.make CMakeFiles/project_tuto.dir/src/ML.cpp.o
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/src/ML.cpp.o
+.PHONY : src/ML.cpp.o
+
+src/ML.i: src/ML.cpp.i
+
+.PHONY : src/ML.i
+
+# target to preprocess a source file
+src/ML.cpp.i:
+	$(MAKE) -f CMakeFiles/project_tuto.dir/build.make CMakeFiles/project_tuto.dir/src/ML.cpp.i
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/src/ML.cpp.i
+.PHONY : src/ML.cpp.i
+
+src/ML.s: src/ML.cpp.s
+
+.PHONY : src/ML.s
+
+# target to generate assembly for a file
+src/ML.cpp.s:
+	$(MAKE) -f CMakeFiles/project_tuto.dir/build.make CMakeFiles/project_tuto.dir/src/ML.cpp.s
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/src/ML.cpp.s
+.PHONY : src/ML.cpp.s
 
 src/main.o: src/main.cpp.o
 
@@ -150,6 +193,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/tuto.o: src/tuto.cpp.o
+
+.PHONY : src/tuto.o
+
+# target to build an object file
+src/tuto.cpp.o:
+	$(MAKE) -f CMakeFiles/project_tuto.dir/build.make CMakeFiles/project_tuto.dir/src/tuto.cpp.o
+.PHONY : src/tuto.cpp.o
+
+src/tuto.i: src/tuto.cpp.i
+
+.PHONY : src/tuto.i
+
+# target to preprocess a source file
+src/tuto.cpp.i:
+	$(MAKE) -f CMakeFiles/project_tuto.dir/build.make CMakeFiles/project_tuto.dir/src/tuto.cpp.i
+.PHONY : src/tuto.cpp.i
+
+src/tuto.s: src/tuto.cpp.s
+
+.PHONY : src/tuto.s
+
+# target to generate assembly for a file
+src/tuto.cpp.s:
+	$(MAKE) -f CMakeFiles/project_tuto.dir/build.make CMakeFiles/project_tuto.dir/src/tuto.cpp.s
+.PHONY : src/tuto.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -158,10 +228,17 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... project_tuto"
 	@echo "... project"
+	@echo "... src/ML.o"
+	@echo "... src/ML.i"
+	@echo "... src/ML.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/tuto.o"
+	@echo "... src/tuto.i"
+	@echo "... src/tuto.s"
 .PHONY : help
 
 

@@ -37,9 +37,11 @@ message ( STATUS "Compiler flags: ${CMAKE_CXX_FLAGS}" )
 # Sources #-----------------------------------------------------------------------------------------
 set ( ZZ3_HEADERS
       src/CImg.h
+      src/ML.hpp
     )
 
 set ( ZZ3_SOURCES
+      src/ML.cpp
     )
 
 include_directories ( src/ )
@@ -51,6 +53,15 @@ add_executable ( ${CMAKE_PROJECT_NAME}
                  ${ZZ3_SOURCES}
                )
 
+add_executable ( ${CMAKE_PROJECT_NAME}_tuto
+                src/tuto.cpp
+                ${ZZ3_HEADERS}
+                ${ZZ3_SOURCES}
+              )
+
 # Build #-------------------------------------------------------------------------------------------
 set_target_properties ( ${CMAKE_PROJECT_NAME} PROPERTIES LINKER_LANGUAGE C )
 target_link_libraries ( ${CMAKE_PROJECT_NAME} ${CMAKE_THREAD_LIBS_INIT} )
+
+set_target_properties ( ${CMAKE_PROJECT_NAME}_tuto PROPERTIES LINKER_LANGUAGE C )
+target_link_libraries ( ${CMAKE_PROJECT_NAME}_tuto ${CMAKE_THREAD_LIBS_INIT} )
