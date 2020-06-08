@@ -1,0 +1,45 @@
+In file included from /usr/include/mlpack/prereqs.hpp:113,
+                 from /usr/include/mlpack/methods/kmeans/kmeans.hpp:15,
+                 from /home/dr3m/Travaux/Cimg_generic/src/ML.hpp:4,
+                 from /home/dr3m/Travaux/Cimg_generic/src/ML.cpp:1:
+/usr/include/mlpack/core/util/arma_config_check.hpp:50:21: note: #pragma message: mlpack was compiled with OpenMP support, but you are compiling without OpenMP support.  This will almost certainly cause irreparable disaster.  Either enable OpenMP support in your application (e.g., add -fopenmp to your compiler command line), or, recompile mlpack *without* OpenMP support.
+   50 |     #pragma message "mlpack was compiled with OpenMP support, but you are \
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   51 | compiling without OpenMP support.  This will almost certainly cause \
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   52 | irreparable disaster.  Either enable OpenMP support in your application (e.g., \
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   53 | add -fopenmp to your compiler command line), or, recompile mlpack *without* \
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   54 | OpenMP support."
+      | ~~~~~~~~~~~~~~~~     
+In file included from /usr/include/mlpack/prereqs.hpp:113,
+                 from /usr/include/mlpack/methods/kmeans/kmeans.hpp:15,
+                 from /home/dr3m/Travaux/Cimg_generic/src/ML.hpp:4,
+                 from /home/dr3m/Travaux/Cimg_generic/src/main.cpp:3:
+/usr/include/mlpack/core/util/arma_config_check.hpp:50:21: note: #pragma message: mlpack was compiled with OpenMP support, but you are compiling without OpenMP support.  This will almost certainly cause irreparable disaster.  Either enable OpenMP support in your application (e.g., add -fopenmp to your compiler command line), or, recompile mlpack *without* OpenMP support.
+   50 |     #pragma message "mlpack was compiled with OpenMP support, but you are \
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   51 | compiling without OpenMP support.  This will almost certainly cause \
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   52 | irreparable disaster.  Either enable OpenMP support in your application (e.g., \
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   53 | add -fopenmp to your compiler command line), or, recompile mlpack *without* \
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   54 | OpenMP support."
+      | ~~~~~~~~~~~~~~~~     
+In file included from /usr/include/mlpack/prereqs.hpp:113,
+                 from /usr/include/mlpack/methods/kmeans/kmeans.hpp:15,
+                 from /home/dr3m/Travaux/Cimg_generic/src/ML.hpp:4,
+                 from /home/dr3m/Travaux/Cimg_generic/src/ML.cpp:1:
+/usr/include/mlpack/core/util/arma_config_check.hpp:50:21: note: #pragma message: mlpack was compiled with OpenMP support, but you are compiling without OpenMP support.  This will almost certainly cause irreparable disaster.  Either enable OpenMP support in your application (e.g., add -fopenmp to your compiler command line), or, recompile mlpack *without* OpenMP support.
+   50 |     #pragma message "mlpack was compiled with OpenMP support, but you are \
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   51 | compiling without OpenMP support.  This will almost certainly cause \
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   52 | irreparable disaster.  Either enable OpenMP support in your application (e.g., \
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   53 | add -fopenmp to your compiler command line), or, recompile mlpack *without* \
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   54 | OpenMP support."
+      | ~~~~~~~~~~~~~~~~     
