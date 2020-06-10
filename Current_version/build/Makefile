@@ -123,59 +123,32 @@ project/fast:
 	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/build
 .PHONY : project/fast
 
-src/ML.o: src/ML.cpp.o
+src/KMeans.o: src/KMeans.cpp.o
 
-.PHONY : src/ML.o
-
-# target to build an object file
-src/ML.cpp.o:
-	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/src/ML.cpp.o
-.PHONY : src/ML.cpp.o
-
-src/ML.i: src/ML.cpp.i
-
-.PHONY : src/ML.i
-
-# target to preprocess a source file
-src/ML.cpp.i:
-	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/src/ML.cpp.i
-.PHONY : src/ML.cpp.i
-
-src/ML.s: src/ML.cpp.s
-
-.PHONY : src/ML.s
-
-# target to generate assembly for a file
-src/ML.cpp.s:
-	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/src/ML.cpp.s
-.PHONY : src/ML.cpp.s
-
-src/main.o: src/main.cpp.o
-
-.PHONY : src/main.o
+.PHONY : src/KMeans.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+src/KMeans.cpp.o:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/src/KMeans.cpp.o
+.PHONY : src/KMeans.cpp.o
 
-src/main.i: src/main.cpp.i
+src/KMeans.i: src/KMeans.cpp.i
 
-.PHONY : src/main.i
+.PHONY : src/KMeans.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+src/KMeans.cpp.i:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/src/KMeans.cpp.i
+.PHONY : src/KMeans.cpp.i
 
-src/main.s: src/main.cpp.s
+src/KMeans.s: src/KMeans.cpp.s
 
-.PHONY : src/main.s
+.PHONY : src/KMeans.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+src/KMeans.cpp.s:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/src/KMeans.cpp.s
+.PHONY : src/KMeans.cpp.s
 
 # Help Target
 help:
@@ -186,12 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... project"
-	@echo "... src/ML.o"
-	@echo "... src/ML.i"
-	@echo "... src/ML.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... src/KMeans.o"
+	@echo "... src/KMeans.i"
+	@echo "... src/KMeans.s"
 .PHONY : help
 
 

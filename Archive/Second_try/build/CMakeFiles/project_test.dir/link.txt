@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/project_test.dir/src/test.cpp.o CMakeFiles/project_test.dir/src/ML.cpp.o  -o project_test  -lX11 -lpthread -lpthread -lstdc++ -lm 

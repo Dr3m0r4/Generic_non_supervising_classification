@@ -114,17 +114,29 @@ tinyexr.h
 CImg.h
 /home/dr3m/Travaux/Cimg_generic/Current_version/src/CImg.h
 
-/home/dr3m/Travaux/Cimg_generic/Current_version/src/ML.cpp
-ML.hpp
-/home/dr3m/Travaux/Cimg_generic/Current_version/src/ML.hpp
-
-/home/dr3m/Travaux/Cimg_generic/Current_version/src/ML.hpp
+/home/dr3m/Travaux/Cimg_generic/Current_version/src/Functions.hpp
 CImg.h
 /home/dr3m/Travaux/Cimg_generic/Current_version/src/CImg.h
 
-/home/dr3m/Travaux/Cimg_generic/Current_version/src/main.cpp
+/home/dr3m/Travaux/Cimg_generic/Current_version/src/KMeans.cpp
 iostream
 -
-ML.hpp
-/home/dr3m/Travaux/Cimg_generic/Current_version/src/ML.hpp
+string
+-
+cstdlib
+-
+ctime
+-
+Functions.hpp
+/home/dr3m/Travaux/Cimg_generic/Current_version/src/Functions.hpp
+KMeans.hpp
+/home/dr3m/Travaux/Cimg_generic/Current_version/src/KMeans.hpp
+
+/home/dr3m/Travaux/Cimg_generic/Current_version/src/KMeans.hpp
+CImg.h
+/home/dr3m/Travaux/Cimg_generic/Current_version/src/CImg.h
+Functions.hpp
+/home/dr3m/Travaux/Cimg_generic/Current_version/src/Functions.hpp
+iostream
+-
 

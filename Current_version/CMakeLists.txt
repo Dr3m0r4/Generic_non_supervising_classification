@@ -37,18 +37,18 @@ message ( STATUS "Compiler flags: ${CMAKE_CXX_FLAGS}" )
 # Sources #-----------------------------------------------------------------------------------------
 set ( ZZ3_HEADERS
       src/CImg.h
-      src/ML.hpp
+      src/Functions.hpp
+      src/KMeans.hpp
     )
 
 set ( ZZ3_SOURCES
-      src/ML.cpp
     )
 
 include_directories ( src/ )
 
 # Executables #-------------------------------------------------------------------------------------
 add_executable ( ${CMAKE_PROJECT_NAME}
-                 src/main.cpp
+                 src/KMeans.cpp
                  ${ZZ3_HEADERS}
                  ${ZZ3_SOURCES}
                )
