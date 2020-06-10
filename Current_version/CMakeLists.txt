@@ -1,5 +1,5 @@
 # Project #-----------------------------------------------------------------------------------------
-project ( project )
+project ( KMeans )
 
 cmake_minimum_required ( VERSION 2.8.9 )
 
@@ -7,7 +7,7 @@ find_package ( Threads )
 
 # C++ Warning Level #-------------------------------------------------------------------------------
 if ( CMAKE_COMPILER_IS_GNUCXX )
- set ( CMAKE_CXX_FLAGS "-Wall -pedantic ${CMAKE_CXX_FLAGS}" )
+ set ( CMAKE_CXX_FLAGS "-pedantic ${CMAKE_CXX_FLAGS}" )
 endif()
 
 set ( CMAKE_THREAD_LIBS_INIT "-lX11 -lpthread ${CMAKE_THREAD_LIBS_INIT}")
@@ -39,6 +39,7 @@ set ( ZZ3_HEADERS
       src/CImg.h
       src/Functions.hpp
       src/KMeans.hpp
+      src/metrics.hpp
     )
 
 set ( ZZ3_SOURCES

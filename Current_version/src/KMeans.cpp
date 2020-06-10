@@ -10,7 +10,7 @@ using T = double;
 
 int main(int argc, char const *argv[]) {
 
-  srand(time(NULL)); // initialisation de rand
+  // srand(time(NULL)); // initialisation de rand
   std::string name, path_name("../images/");
   int nb_clusters(1);
 
@@ -24,21 +24,18 @@ int main(int argc, char const *argv[]) {
   std::cout << "How many clusters do you want to identify ?" << '\n';
   std::cin >> nb_clusters;
 
-  KMeans<T> kfisrt(image, nb_clusters);
+  KMeans<T, Euclidian<T>> kfisrt(image, nb_clusters);
 
   T* centroids = new T[nb_clusters];
   T* clusters = new T[nb_clusters];
 
-  for (size_t i = 0; i < nb_clusters; i++) {
-    centroids[i] = rand()/max_value;
-    clusters[i] = i*max_value/nb_clusters;
-  }
-
   kfisrt.display_centroids();
+
+  std::cout << "The distance is " << kfisrt.get_distance(0,105,142) << '\n';
 
   // std::cout << image.depth() << '\n';
 
-  image.display();
+  // image.display();
 
   return 0;
 }
