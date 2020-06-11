@@ -3,6 +3,7 @@
 
 #include "CImg.h"
 
+// Functions
 template <typename T = unsigned int>
 void average_grey(cimg_library::CImg<T>& img) {
   // using size_t = unsigned int;
@@ -22,6 +23,39 @@ void average_grey(cimg_library::CImg<T>& img) {
       }
     }
   }
+}
+
+// Operators
+template <typename T>
+bool operator<(const cimg_library::CImg<T>& A, T b) {
+  size_t width(A.width()), height(A.height()), depth(A.depth());
+  size_t x(0), y(0), z(0);
+  bool result(True);
+  while (x < width && result) {
+    for (size_t y = 0; y < height; y++) {
+      for (size_t z = 0; z < depth; z++) {
+        result = result && A(x,y,z)<b;
+      }
+    }
+    x++;
+  }
+  return result;
+}
+
+template <typename T>
+bool operator>(const cimg_library::CImg<T>& A, T b) {
+  size_t width(A.width()), height(A.height()), depth(A.depth());
+  size_t x(0), y(0), z(0);
+  bool result(True);
+  while (x < width && result) {
+    for (size_t y = 0; y < height; y++) {
+      for (size_t z = 0; z < depth; z++) {
+        result = result && A(x,y,z)>b;
+      }
+    }
+    x++;
+  }
+  return result;
 }
 
 #endif

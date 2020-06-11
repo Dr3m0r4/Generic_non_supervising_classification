@@ -139,6 +139,8 @@ stdexcept
 /home/dr3m/Travaux/Cimg_generic/Current_version/src/KMeans.hpp
 MLearning.hpp
 /home/dr3m/Travaux/Cimg_generic/Current_version/src/MLearning.hpp
+Functions.hpp
+/home/dr3m/Travaux/Cimg_generic/Current_version/src/Functions.hpp
 iostream
 -
 KMeans.cxx

@@ -1,3 +1,4 @@
+// Constructors
 template <typename T, typename Met>
 KMeans<T, Met>::KMeans(cimg_library::CImg<T> image, int nb_c, size_t itermax) {
   img.assign(cimg_library::CImg<T>(image));
@@ -19,6 +20,7 @@ KMeans<T, Met>::KMeans(cimg_library::CImg<T> image, int nb_c, size_t itermax) {
   max_iter = itermax;
 }
 
+// Display
 template <typename T, typename Met>
 void KMeans<T, Met>::display_centroids() {
   for (size_t i = 0; i < nb_clusters; i++) {
@@ -32,6 +34,7 @@ void KMeans<T, Met>::display_centroids(int i) {
   std::cout << "centroid " << i << " x : " << centroids[i][0] << " | y : " << centroids[i][1] << " | z : " << centroids[i][2] << '\n';
 }
 
+// Methods
 #include <stdexcept>
 template <typename T, typename Met>
 T KMeans<T, Met>::get_distance(int i, int x, int y, int z) const {
@@ -62,6 +65,29 @@ T KMeans<T, Met>::get_distance(int i, int x, int y) const {
   return KMeans<T, Met>::get_distance(i,x,y,0);
 }
 
+// Computation
+template <typename T, typename Met>
+void KMeans<T, Met>::compute(T tol) {
+  size_t iter(0);
+  cimg_library::CImg<T> old_output(output);
+  fill_output();
+  bool stop((output-old_output)>tol);
+  while (iter < max_iter && stop) {
+    iter++;
+    old_output = output;
+    for (size_t i = 1; i < nb_clusters+1; i++) {
+
+    }
+    output.display("before");
+    this->compute_centroids();
+    fill_output();
+    output.display("after");
+    stop = (output-old_output)>tol;
+  }
+  std::cout << "the number of iterations is : " << iter << " and the signal stop is : " << stop << '\n';
+}
+
+// Private methods
 template <typename T, typename Met>
 void KMeans<T, Met>::grey() {
   for (size_t x = 0; x < width; x++) {
@@ -80,6 +106,10 @@ void KMeans<T, Met>::grey() {
   }
 }
 
+/*
+Fill the output image with the value corresponding
+to the clusters associated with the pixel.
+*/
 template <typename T, typename Met>
 void KMeans<T, Met>::fill_output() {
   for (size_t x = 0; x < width; x++) {
@@ -99,57 +129,10 @@ void KMeans<T, Met>::fill_output() {
   }
 }
 
+/*
+Search the new centroids for the KMeans
+algorithm.
+*/
 template <typename T, typename Met>
-void KMeans<T, Met>::compute(T tol) {
-
-  size_t iter(0);
-  cimg_library::CImg<T> old_output(output);
-  fill_output();
-  bool stop((output-old_output)>tol);
-  while (iter < max_iter && stop) {
-    iter++;
-    old_output = output;
-    for (size_t i = 1; i < nb_clusters+1; i++) {
-      
-    }
-    output.display("before");
-    fill_output();
-    output.display("after");
-    stop = (output-old_output)>tol;
-  }
-  std::cout << "the number of iterations is : " << iter << " and the signal stop is : " << stop << '\n';
-}
-
-// -----------------------------------
-
-template <typename T>
-bool operator<(const cimg_library::CImg<T>& A, T b) {
-  size_t width(A.width()), height(A.height()), depth(A.depth());
-  size_t x(0), y(0), z(0);
-  bool result(True);
-  while (x < width && result) {
-    for (size_t y = 0; y < height; y++) {
-      for (size_t z = 0; z < depth; z++) {
-        result = result && A(x,y,z)<b;
-      }
-    }
-    x++;
-  }
-  return result;
-}
-
-template <typename T>
-bool operator>(const cimg_library::CImg<T>& A, T b) {
-  size_t width(A.width()), height(A.height()), depth(A.depth());
-  size_t x(0), y(0), z(0);
-  bool result(True);
-  while (x < width && result) {
-    for (size_t y = 0; y < height; y++) {
-      for (size_t z = 0; z < depth; z++) {
-        result = result && A(x,y,z)>b;
-      }
-    }
-    x++;
-  }
-  return result;
+void KMeans<T, Met>::compute_centroids() {
 }
