@@ -137,20 +137,26 @@ stdexcept
 -
 
 /home/dr3m/Travaux/Cimg_generic/Current_version/src/KMeans.hpp
-CImg.h
-/home/dr3m/Travaux/Cimg_generic/Current_version/src/CImg.h
-metrics.hpp
-/home/dr3m/Travaux/Cimg_generic/Current_version/src/metrics.hpp
+MLearning.hpp
+/home/dr3m/Travaux/Cimg_generic/Current_version/src/MLearning.hpp
 iostream
 -
 KMeans.cxx
 /home/dr3m/Travaux/Cimg_generic/Current_version/src/KMeans.cxx
+
+/home/dr3m/Travaux/Cimg_generic/Current_version/src/MLearning.hpp
+CImg.h
+/home/dr3m/Travaux/Cimg_generic/Current_version/src/CImg.h
+metrics.hpp
+/home/dr3m/Travaux/Cimg_generic/Current_version/src/metrics.hpp
 
 /home/dr3m/Travaux/Cimg_generic/Current_version/src/metrics.cxx
 
 /home/dr3m/Travaux/Cimg_generic/Current_version/src/metrics.hpp
 cmath
 -
+CImg.h
+/home/dr3m/Travaux/Cimg_generic/Current_version/src/CImg.h
 metrics.cxx
 /home/dr3m/Travaux/Cimg_generic/Current_version/src/metrics.cxx
 

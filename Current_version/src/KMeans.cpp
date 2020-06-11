@@ -33,6 +33,10 @@ int main(int argc, char const *argv[]) {
 
   std::cout << "The distance is " << kfisrt.get_distance(0,105,142) << '\n';
 
+  kfisrt.compute(1e-3);
+
+  // std::cout << Euclidian<T>()(1,5) << '\n';
+
   // std::cout << image.depth() << '\n';
 
   // image.display();

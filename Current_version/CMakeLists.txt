@@ -40,6 +40,7 @@ set ( ZZ3_HEADERS
       src/Functions.hpp
       src/KMeans.hpp
       src/metrics.hpp
+      src/MLearning.hpp
     )
 
 set ( ZZ3_SOURCES
