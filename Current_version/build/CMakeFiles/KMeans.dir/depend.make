@@ -7,6 +7,10 @@ CMakeFiles/KMeans.dir/src/KMeans.cpp.o: ../src/KMeans.cpp
 CMakeFiles/KMeans.dir/src/KMeans.cpp.o: ../src/KMeans.cxx
 CMakeFiles/KMeans.dir/src/KMeans.cpp.o: ../src/KMeans.hpp
 CMakeFiles/KMeans.dir/src/KMeans.cpp.o: ../src/MLearning.hpp
+CMakeFiles/KMeans.dir/src/KMeans.cpp.o: ../src/Pixel.hpp
 CMakeFiles/KMeans.dir/src/KMeans.cpp.o: ../src/metrics.cxx
 CMakeFiles/KMeans.dir/src/KMeans.cpp.o: ../src/metrics.hpp
+
+CMakeFiles/KMeans.dir/src/Pixel.cpp.o: ../src/Pixel.cpp
+CMakeFiles/KMeans.dir/src/Pixel.cpp.o: ../src/Pixel.hpp
 

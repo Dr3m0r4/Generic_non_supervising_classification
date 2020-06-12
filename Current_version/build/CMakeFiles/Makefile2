@@ -74,12 +74,12 @@ clean: CMakeFiles/KMeans.dir/clean
 CMakeFiles/KMeans.dir/all:
 	$(MAKE) -f CMakeFiles/KMeans.dir/build.make CMakeFiles/KMeans.dir/depend
 	$(MAKE) -f CMakeFiles/KMeans.dir/build.make CMakeFiles/KMeans.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dr3m/Travaux/Cimg_generic/Current_version/build/CMakeFiles --progress-num=1,2 "Built target KMeans"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dr3m/Travaux/Cimg_generic/Current_version/build/CMakeFiles --progress-num=1,2,3 "Built target KMeans"
 .PHONY : CMakeFiles/KMeans.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/KMeans.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dr3m/Travaux/Cimg_generic/Current_version/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dr3m/Travaux/Cimg_generic/Current_version/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/KMeans.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/dr3m/Travaux/Cimg_generic/Current_version/build/CMakeFiles 0
 .PHONY : CMakeFiles/KMeans.dir/rule

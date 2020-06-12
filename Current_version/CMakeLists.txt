@@ -41,9 +41,11 @@ set ( ZZ3_HEADERS
       src/KMeans.hpp
       src/metrics.hpp
       src/MLearning.hpp
+      src/Pixel.hpp
     )
 
 set ( ZZ3_SOURCES
+      src/Pixel.cpp
     )
 
 include_directories ( src/ )

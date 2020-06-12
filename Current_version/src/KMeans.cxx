@@ -6,6 +6,7 @@ KMeans<T, Met>::KMeans(cimg_library::CImg<T> image, int nb_c, size_t itermax) {
   width = img.width(); height = img.height(); depth = img.depth();
   spectrum = img.spectrum();
   centroids = new int*[nb_clusters]; clusters = new T[nb_clusters+1];
+  vect_p = new std::vector<Pixel>[nb_clusters];
 
   output.assign(cimg_library::CImg<T>(width,height,depth,1,0));
   clusters[0] = 0;
@@ -22,7 +23,7 @@ KMeans<T, Met>::KMeans(cimg_library::CImg<T> image, int nb_c, size_t itermax) {
 
 // Display
 template <typename T, typename Met>
-void KMeans<T, Met>::display_centroids() {
+void KMeans<T, Met>::display_centroids() const {
   for (size_t i = 0; i < nb_clusters; i++) {
     std::cout << "centroid " << i << " x : " << centroids[i][0] << " | y : " << centroids[i][1] << " | z : " << centroids[i][2] << '\n';
   }
@@ -30,7 +31,7 @@ void KMeans<T, Met>::display_centroids() {
 }
 
 template <typename T, typename Met>
-void KMeans<T, Met>::display_centroids(int i) {
+void KMeans<T, Met>::display_centroids(int i) const {
   std::cout << "centroid " << i << " x : " << centroids[i][0] << " | y : " << centroids[i][1] << " | z : " << centroids[i][2] << '\n';
 }
 
@@ -71,20 +72,19 @@ void KMeans<T, Met>::compute(T tol) {
   size_t iter(0);
   cimg_library::CImg<T> old_output(output);
   fill_output();
-  bool stop((output-old_output)>tol);
+  bool stop(abs(output-old_output)>tol);
   while (iter < max_iter && stop) {
     iter++;
     old_output = output;
-    for (size_t i = 1; i < nb_clusters+1; i++) {
-
-    }
-    output.display("before");
+    display_centroids();
     this->compute_centroids();
-    fill_output();
-    output.display("after");
-    stop = (output-old_output)>tol;
+    this->fill_output();
+    display_centroids();
+    stop = abs(output-old_output)>tol;
+    std::cout << "iteration " << iter << '\n';
   }
   std::cout << "the number of iterations is : " << iter << " and the signal stop is : " << stop << '\n';
+  output.display("end of the algorithm");
 }
 
 // Private methods
@@ -124,6 +124,11 @@ void KMeans<T, Met>::fill_output() {
             output(x,y,z) = clusters[i+1];
           }
         }
+        for (size_t i = 0; i < nb_clusters; i++) {
+          if (output(x,y,z) == clusters[i+1]) {
+            vect_p[i].push_back(Pixel(x,y,z));
+          }
+        }
       }
     }
   }
@@ -135,4 +140,25 @@ algorithm.
 */
 template <typename T, typename Met>
 void KMeans<T, Met>::compute_centroids() {
+  Pixel p(0,0,0);
+  int* sum = new int[3];
+  size_t size(0);
+  for (size_t i = 0; i < nb_clusters; i++) {
+    for (size_t j = 0; j < 3; j++) {
+      sum[j] = 0;
+    }
+    std::cout << "start of centroid " << i << '\n';
+    size = vect_p[i].size();
+    while (!vect_p[i].empty()) {
+      p = vect_p[i].back();
+      sum[0] += p.getX();
+      sum[1] += p.getY();
+      sum[2] += p.getZ();
+      vect_p[i].pop_back();
+    }
+    std::cout << "end of centroid " << i << '\n';
+    for (size_t j = 0; j < 3; j++) {
+      centroids[i][j] = sum[j]/size;
+    }
+  }
 }

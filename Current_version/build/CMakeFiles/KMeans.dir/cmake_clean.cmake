@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/KMeans.dir/src/KMeans.cpp.o"
+  "CMakeFiles/KMeans.dir/src/Pixel.cpp.o"
   "KMeans"
   "KMeans.pdb"
 )

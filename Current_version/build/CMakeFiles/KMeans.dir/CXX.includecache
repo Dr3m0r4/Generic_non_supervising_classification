@@ -141,7 +141,11 @@ MLearning.hpp
 /home/dr3m/Travaux/Cimg_generic/Current_version/src/MLearning.hpp
 Functions.hpp
 /home/dr3m/Travaux/Cimg_generic/Current_version/src/Functions.hpp
+Pixel.hpp
+/home/dr3m/Travaux/Cimg_generic/Current_version/src/Pixel.hpp
 iostream
+-
+vector
 -
 KMeans.cxx
 /home/dr3m/Travaux/Cimg_generic/Current_version/src/KMeans.cxx
@@ -151,6 +155,8 @@ CImg.h
 /home/dr3m/Travaux/Cimg_generic/Current_version/src/CImg.h
 metrics.hpp
 /home/dr3m/Travaux/Cimg_generic/Current_version/src/metrics.hpp
+
+/home/dr3m/Travaux/Cimg_generic/Current_version/src/Pixel.hpp
 
 /home/dr3m/Travaux/Cimg_generic/Current_version/src/metrics.cxx
 

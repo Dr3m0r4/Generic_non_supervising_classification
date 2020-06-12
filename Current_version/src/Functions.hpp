@@ -30,7 +30,7 @@ template <typename T>
 bool operator<(const cimg_library::CImg<T>& A, T b) {
   size_t width(A.width()), height(A.height()), depth(A.depth());
   size_t x(0), y(0), z(0);
-  bool result(True);
+  bool result(true);
   while (x < width && result) {
     for (size_t y = 0; y < height; y++) {
       for (size_t z = 0; z < depth; z++) {
@@ -46,7 +46,7 @@ template <typename T>
 bool operator>(const cimg_library::CImg<T>& A, T b) {
   size_t width(A.width()), height(A.height()), depth(A.depth());
   size_t x(0), y(0), z(0);
-  bool result(True);
+  bool result(true);
   while (x < width && result) {
     for (size_t y = 0; y < height; y++) {
       for (size_t z = 0; z < depth; z++) {

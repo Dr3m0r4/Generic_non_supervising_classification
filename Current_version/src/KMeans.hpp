@@ -3,7 +3,10 @@
 
 #include "MLearning.hpp"
 #include "Functions.hpp"
+#include "Pixel.hpp"
+
 #include <iostream>
+#include <vector>
 
 /*
 The metric name is passed as the second type for template.
@@ -21,8 +24,8 @@ public:
   // Constructors
   KMeans(cimg_library::CImg<T> image, int nb_c, size_t itermax = 100);
   // Display
-  void display_centroids();
-  void display_centroids(int i);
+  void display_centroids() const;
+  void display_centroids(int i) const;
   // Methods
   T get_distance(int i, int x, int y, int z) const override;
   T get_distance(int i, int x, int y) const;
@@ -40,10 +43,10 @@ private:
   cimg_library::CImg<T> img;
   cimg_library::CImg<T> output;
   size_t width, height, depth, spectrum;
-  size_t nb_clusters;
+  size_t nb_clusters, max_iter;
   int** centroids;
   T* clusters;
-  size_t max_iter;
+  std::vector<Pixel>* vect_p;
   const T max_value = 255;
 };
 

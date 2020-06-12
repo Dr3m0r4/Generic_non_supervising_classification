@@ -150,6 +150,33 @@ src/KMeans.cpp.s:
 	$(MAKE) -f CMakeFiles/KMeans.dir/build.make CMakeFiles/KMeans.dir/src/KMeans.cpp.s
 .PHONY : src/KMeans.cpp.s
 
+src/Pixel.o: src/Pixel.cpp.o
+
+.PHONY : src/Pixel.o
+
+# target to build an object file
+src/Pixel.cpp.o:
+	$(MAKE) -f CMakeFiles/KMeans.dir/build.make CMakeFiles/KMeans.dir/src/Pixel.cpp.o
+.PHONY : src/Pixel.cpp.o
+
+src/Pixel.i: src/Pixel.cpp.i
+
+.PHONY : src/Pixel.i
+
+# target to preprocess a source file
+src/Pixel.cpp.i:
+	$(MAKE) -f CMakeFiles/KMeans.dir/build.make CMakeFiles/KMeans.dir/src/Pixel.cpp.i
+.PHONY : src/Pixel.cpp.i
+
+src/Pixel.s: src/Pixel.cpp.s
+
+.PHONY : src/Pixel.s
+
+# target to generate assembly for a file
+src/Pixel.cpp.s:
+	$(MAKE) -f CMakeFiles/KMeans.dir/build.make CMakeFiles/KMeans.dir/src/Pixel.cpp.s
+.PHONY : src/Pixel.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,6 +189,9 @@ help:
 	@echo "... src/KMeans.o"
 	@echo "... src/KMeans.i"
 	@echo "... src/KMeans.s"
+	@echo "... src/Pixel.o"
+	@echo "... src/Pixel.i"
+	@echo "... src/Pixel.s"
 .PHONY : help
 
 

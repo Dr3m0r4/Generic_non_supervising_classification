@@ -24,7 +24,7 @@ int main(int argc, char const *argv[]) {
   std::cout << "How many clusters do you want to identify ?" << '\n';
   std::cin >> nb_clusters;
 
-  KMeans<T, Non_Euclidian<T>> kfisrt(image, nb_clusters);
+  KMeans<T, Linf<T>> kfisrt(image, nb_clusters);
 
   T* centroids = new T[nb_clusters];
   T* clusters = new T[nb_clusters];
@@ -33,7 +33,7 @@ int main(int argc, char const *argv[]) {
 
   std::cout << "The distance is " << kfisrt.get_distance(0,105,142) << '\n';
 
-  kfisrt.compute(1e-3);
+  kfisrt.compute(0);
 
   // std::cout << Euclidian<T>()(1,5) << '\n';
 
