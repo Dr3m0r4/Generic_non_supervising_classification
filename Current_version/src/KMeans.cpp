@@ -12,7 +12,7 @@ int main(int argc, char const *argv[]) {
 
   // srand(time(NULL)); // initialisation de rand
   std::string name, path_name("../images/");
-  int nb_clusters(1);
+  int nb_clusters(1), max_iter(100);
 
   std::cout << "Enter the name of the image you want to analyse :" << '\n';
   std::cin >> name;
@@ -24,16 +24,17 @@ int main(int argc, char const *argv[]) {
   std::cout << "How many clusters do you want to identify ?" << '\n';
   std::cin >> nb_clusters;
 
-  KMeans<T, Linf<T>> kfisrt(image, nb_clusters);
+  std::cout << "What is the max limit ?" << '\n';
+  std::cin >> max_iter;
 
-  T* centroids = new T[nb_clusters];
-  T* clusters = new T[nb_clusters];
+  // KMeans<T, Linf<T>> kfisrt(image, nb_clusters, max_iter);
+  KMeans<T, Linf<T>> kfisrt(image, nb_clusters, max_iter);
 
   kfisrt.display_centroids();
 
-  std::cout << "The distance is " << kfisrt.get_distance(0,105,142) << '\n';
+  // std::cout << "The distance is " << kfisrt.get_distance(0,105,142) << '\n';
 
-  kfisrt.compute(0);
+  kfisrt.compute(1e-1);
 
   // std::cout << Euclidian<T>()(1,5) << '\n';
 

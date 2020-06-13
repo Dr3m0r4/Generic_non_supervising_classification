@@ -2,7 +2,7 @@
 #define MLEARNING_HPP
 
 #include "CImg.h"
-#include "metrics.hpp"
+#include "metrics2.hpp"
 
 /*
 Interface to help to implement other Machine Learning methods

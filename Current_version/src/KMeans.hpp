@@ -39,16 +39,23 @@ private:
   void grey(); // fill the image with average grey to be worked with
   void fill_output();
   void compute_centroids();
+  int** fill_centroids();
+  // double** diff_centroids(int** old_centr);
+  double diff_centroids(int** old_centr);
+  bool compare_centroids(double** diff, double tol);
 private:
   cimg_library::CImg<T> img;
   cimg_library::CImg<T> output;
   size_t width, height, depth, spectrum;
   size_t nb_clusters, max_iter;
-  int** centroids;
-  T* clusters;
-  std::vector<Pixel>* vect_p;
+  // int** centroids;
+  // T* clusters;
+  std::vector<Pixel<T>> centroids;
+  std::vector<T> clusters;
+  std::vector<Pixel<T>>* vect_p;
   const T max_value = 255;
 };
+
 
 #include "KMeans.cxx"
 

@@ -7,7 +7,7 @@ find_package ( Threads )
 
 # C++ Warning Level #-------------------------------------------------------------------------------
 if ( CMAKE_COMPILER_IS_GNUCXX )
- set ( CMAKE_CXX_FLAGS "-pedantic ${CMAKE_CXX_FLAGS}" )
+ set ( CMAKE_CXX_FLAGS "-pedantic -g ${CMAKE_CXX_FLAGS}" )
 endif()
 
 set ( CMAKE_THREAD_LIBS_INIT "-lX11 -lpthread ${CMAKE_THREAD_LIBS_INIT}")
@@ -39,13 +39,12 @@ set ( ZZ3_HEADERS
       src/CImg.h
       src/Functions.hpp
       src/KMeans.hpp
-      src/metrics.hpp
+      src/metrics2.hpp
       src/MLearning.hpp
       src/Pixel.hpp
     )
 
 set ( ZZ3_SOURCES
-      src/Pixel.cpp
     )
 
 include_directories ( src/ )

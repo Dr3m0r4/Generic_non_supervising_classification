@@ -5,34 +5,45 @@ KMeans<T, Met>::KMeans(cimg_library::CImg<T> image, int nb_c, size_t itermax) {
   nb_clusters = nb_c;
   width = img.width(); height = img.height(); depth = img.depth();
   spectrum = img.spectrum();
-  centroids = new int*[nb_clusters]; clusters = new T[nb_clusters+1];
-  vect_p = new std::vector<Pixel>[nb_clusters];
+  // centroids = new int*[nb_clusters];
+  // clusters = new T[nb_clusters+1];
+  vect_p = new std::vector<Pixel<T>>[nb_clusters];
 
   output.assign(cimg_library::CImg<T>(width,height,depth,1,0));
-  clusters[0] = 0;
+  // clusters[0] = 0;
+  clusters.push_back(0);
   for (size_t i = 0; i < nb_clusters; i++) {
-    centroids[i] = new int[3];
-    centroids[i][0] = rand() % width;
-    centroids[i][1] = rand() % height;
-    centroids[i][2] = rand() % depth;
-    clusters[i+1] = (i+1)*max_value/(nb_clusters+1);
+    // clusters[i+1] = (i+1)*max_value/(nb_clusters+1);
+    // centroids[i] = new int[3];
+    clusters.push_back((i+1)*max_value/(nb_clusters+1));
+    centroids.push_back(Pixel<T>(
+      (T) (rand() % width),
+      (T) (rand() % height),
+      (T) (rand() % depth),
+      (T) (rand() % (int)max_value)
+    ));
+    // centroids.push_back(new T[4]);
+    // centroids[i][0] = (T) (rand() % width);
+    // centroids[i][1] = (T) (rand() % height);
+    // centroids[i][2] = (T) (rand() % depth);
+    // centroids[i][3] = (T) (rand() % (int)max_value);
   }
 
-  max_iter = itermax;
+  this->max_iter = itermax;
 }
 
 // Display
 template <typename T, typename Met>
 void KMeans<T, Met>::display_centroids() const {
   for (size_t i = 0; i < nb_clusters; i++) {
-    std::cout << "centroid " << i << " x : " << centroids[i][0] << " | y : " << centroids[i][1] << " | z : " << centroids[i][2] << '\n';
+    std::cout << "centroid " << i << " x : " << centroids[i][0] << " | y : " << centroids[i][1] << " | z : " << centroids[i][2] << " | value : " << centroids[i][3] << '\n';
   }
   std::cout << '\n';
 }
 
 template <typename T, typename Met>
 void KMeans<T, Met>::display_centroids(int i) const {
-  std::cout << "centroid " << i << " x : " << centroids[i][0] << " | y : " << centroids[i][1] << " | z : " << centroids[i][2] << '\n';
+  std::cout << "centroid " << i << " x : " << centroids[i][0] << " | y : " << centroids[i][1] << " | z : " << centroids[i][2] << " | value : " << centroids[i][3] << '\n';
 }
 
 // Methods
@@ -47,12 +58,10 @@ T KMeans<T, Met>::get_distance(int i, int x, int y, int z) const {
         throw std::invalid_argument( "one of the argument isn't correctly bound !!");
   }
 
-  int a(centroids[i][0]), b(centroids[i][1]), c(centroids[i][2]);
-
   T result(0);
-  int inter[3] = {x, y, z};
+  Pixel<T> inter(x, y, z, img(x,y,z));
 
-  result = Met()(img, centroids[i], inter);
+  result = Met()(centroids[i], inter);
 
   return result;
 }
@@ -70,21 +79,36 @@ T KMeans<T, Met>::get_distance(int i, int x, int y) const {
 template <typename T, typename Met>
 void KMeans<T, Met>::compute(T tol) {
   size_t iter(0);
-  cimg_library::CImg<T> old_output(output);
+  int** old_centr = fill_centroids();
+  // cimg_library::CImg<T>* old_output = new cimg_library::CImg<T>(output);
   fill_output();
-  bool stop(abs(output-old_output)>tol);
-  while (iter < max_iter && stop) {
+  // output.display("iteration 0");
+  output.save_png("../images/before.png");
+  // bool stop(compare_centroids(diff_centroids(old_centr), tol));
+  double diff(diff_centroids(old_centr));
+  double old_diff(1.0), error(1);
+  bool stop(error < tol);
+  while (iter < max_iter && !stop) {
     iter++;
-    old_output = output;
-    display_centroids();
+    std::cout << "start of iteration " << iter << '\n';
+    // old_output = new cimg_library::CImg<T>(output);
+    // display_centroids();
+    old_diff = diff;
+    old_centr = fill_centroids();
     this->compute_centroids();
     this->fill_output();
-    display_centroids();
-    stop = abs(output-old_output)>tol;
-    std::cout << "iteration " << iter << '\n';
+    // output.display("iteration "+char(iter));
+    // display_centroids();
+    // stop = compare_centroids(diff_centroids(old_centr), tol);
+    diff = diff_centroids(old_centr);
+    error = std::abs(old_diff-diff);
+    stop = error < tol;
+    std::cout << ">>> iteration " << iter << " with an error of " << error << '\n';
   }
-  std::cout << "the number of iterations is : " << iter << " and the signal stop is : " << stop << '\n';
-  output.display("end of the algorithm");
+  std::cout << "the number of iterations is : " << iter << " and the difference is : " << diff << '\n';
+  std::cout << "the number of clusters is " << nb_clusters << '\n';
+  // output.display("end of the algorithm");
+  output.save_png("../images/after.png");
 }
 
 // Private methods
@@ -126,7 +150,7 @@ void KMeans<T, Met>::fill_output() {
         }
         for (size_t i = 0; i < nb_clusters; i++) {
           if (output(x,y,z) == clusters[i+1]) {
-            vect_p[i].push_back(Pixel(x,y,z));
+            vect_p[i].push_back(Pixel<T>(x,y,z,img(x,y,z)));
           }
         }
       }
@@ -140,25 +164,74 @@ algorithm.
 */
 template <typename T, typename Met>
 void KMeans<T, Met>::compute_centroids() {
-  Pixel p(0,0,0);
-  int* sum = new int[3];
+  Pixel<T> p(0,0,0,0);
+  T* sum = new T[4];
   size_t size(0);
+  bool suppr(false);
   for (size_t i = 0; i < nb_clusters; i++) {
     for (size_t j = 0; j < 3; j++) {
       sum[j] = 0;
     }
-    std::cout << "start of centroid " << i << '\n';
+    // std::cout << "start of centroid " << i << '\n';
     size = vect_p[i].size();
-    while (!vect_p[i].empty()) {
-      p = vect_p[i].back();
-      sum[0] += p.getX();
-      sum[1] += p.getY();
-      sum[2] += p.getZ();
-      vect_p[i].pop_back();
-    }
-    std::cout << "end of centroid " << i << '\n';
-    for (size_t j = 0; j < 3; j++) {
-      centroids[i][j] = sum[j]/size;
+    if (size) {
+      while (!vect_p[i].empty()) {
+        p = vect_p[i].back();
+        sum[0] += p.getX();
+        sum[1] += p.getY();
+        sum[2] += p.getZ();
+        sum[3] += p.getV();
+        vect_p[i].pop_back();
+      }
+      // std::cout << "end of centroid " << i << '\n';
+      for (size_t j = 0; j < 4; j++) {
+        centroids[i][j] = sum[j]/size;
+      }
+    } else if (!suppr) {
+      // std::cout << "tes baise" << '\n';
+      centroids.erase(centroids.begin()+i);
+      clusters.erase(clusters.begin()+i+1);
+      nb_clusters--;
+      i--;
+      suppr = true;
     }
   }
+}
+
+template <typename T, typename Met>
+int** KMeans<T, Met>::fill_centroids() {
+  int** result = new int*[nb_clusters];
+  for (size_t i = 0; i < nb_clusters; i++) {
+    result[i] = new int[3];
+    for (size_t j = 0; j < 3; j++) {
+      result[i][j] = centroids[i][j];
+    }
+  }
+  return result;
+}
+
+// #include <cmath>
+template <typename T, typename Met>
+double KMeans<T, Met>::diff_centroids(int** old_centr) {
+  // double** result = new double*[nb_clusters];
+  double result(0);
+  for (size_t i = 0; i < nb_clusters; i++) {
+    // result[i] = new double[3];
+    for (size_t j = 0; j < 3; j++) {
+      // result[i][j] = abs(centroids[i][j]-old_centr[i][j]);
+      result += std::pow(centroids[i][j]-old_centr[i][j],2);
+    }
+  }
+  return std::sqrt(result);
+}
+
+template <typename T, typename Met>
+bool KMeans<T, Met>::compare_centroids(double** diff, double tol) {
+  bool result(false);
+  for (size_t i = 0; i < nb_clusters; i++) {
+    for (size_t j = 0; j < 3; j++) {
+      result = result && diff[i][j]<tol;
+    }
+  }
+  return result;
 }

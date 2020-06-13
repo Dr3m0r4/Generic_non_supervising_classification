@@ -8,9 +8,7 @@ CMakeFiles/KMeans.dir/src/KMeans.cpp.o
  /home/dr3m/Travaux/Cimg_generic/Current_version/src/KMeans.cxx
  /home/dr3m/Travaux/Cimg_generic/Current_version/src/KMeans.hpp
  /home/dr3m/Travaux/Cimg_generic/Current_version/src/MLearning.hpp
+ /home/dr3m/Travaux/Cimg_generic/Current_version/src/Pixel.cxx
  /home/dr3m/Travaux/Cimg_generic/Current_version/src/Pixel.hpp
- /home/dr3m/Travaux/Cimg_generic/Current_version/src/metrics.cxx
- /home/dr3m/Travaux/Cimg_generic/Current_version/src/metrics.hpp
-CMakeFiles/KMeans.dir/src/Pixel.cpp.o
- /home/dr3m/Travaux/Cimg_generic/Current_version/src/Pixel.cpp
- /home/dr3m/Travaux/Cimg_generic/Current_version/src/Pixel.hpp
+ /home/dr3m/Travaux/Cimg_generic/Current_version/src/metrics2.cxx
+ /home/dr3m/Travaux/Cimg_generic/Current_version/src/metrics2.hpp

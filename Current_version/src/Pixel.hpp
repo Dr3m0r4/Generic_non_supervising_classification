@@ -1,20 +1,27 @@
 #ifndef PIXEL_HPP
 #define PIXEL_HPP
 
+template <typename T>
 class Pixel {
 public:
   // Constructors
   Pixel();
-  Pixel(int a, int b, int c);
+  Pixel(T a, T b, T c, T v);
   // Affectation
-  void assign(int a, int b, int c);
-  Pixel& operator=(const Pixel& p);
+  void assign(T a, T b, T c, T v);
+  Pixel<T>& operator=(const Pixel<T>& p);
+  const T& operator[](int i) const;
+  T& operator[](int i);
   // Getters
-  int getX() const;
-  int getY() const;
-  int getZ() const;
+  T getX() const;
+  T getY() const;
+  T getZ() const;
+  T getV() const;
 private:
-  int x, y, z;
+  T x, y, z;
+  T v;
 };
+
+#include "Pixel.cxx"
 
 #endif

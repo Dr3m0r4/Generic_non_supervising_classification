@@ -153,18 +153,22 @@ KMeans.cxx
 /home/dr3m/Travaux/Cimg_generic/Current_version/src/MLearning.hpp
 CImg.h
 /home/dr3m/Travaux/Cimg_generic/Current_version/src/CImg.h
-metrics.hpp
-/home/dr3m/Travaux/Cimg_generic/Current_version/src/metrics.hpp
+metrics2.hpp
+/home/dr3m/Travaux/Cimg_generic/Current_version/src/metrics2.hpp
+
+/home/dr3m/Travaux/Cimg_generic/Current_version/src/Pixel.cxx
 
 /home/dr3m/Travaux/Cimg_generic/Current_version/src/Pixel.hpp
+Pixel.cxx
+/home/dr3m/Travaux/Cimg_generic/Current_version/src/Pixel.cxx
 
-/home/dr3m/Travaux/Cimg_generic/Current_version/src/metrics.cxx
+/home/dr3m/Travaux/Cimg_generic/Current_version/src/metrics2.cxx
 
-/home/dr3m/Travaux/Cimg_generic/Current_version/src/metrics.hpp
+/home/dr3m/Travaux/Cimg_generic/Current_version/src/metrics2.hpp
 cmath
 -
-CImg.h
-/home/dr3m/Travaux/Cimg_generic/Current_version/src/CImg.h
-metrics.cxx
-/home/dr3m/Travaux/Cimg_generic/Current_version/src/metrics.cxx
+Pixel.hpp
+/home/dr3m/Travaux/Cimg_generic/Current_version/src/Pixel.hpp
+metrics2.cxx
+/home/dr3m/Travaux/Cimg_generic/Current_version/src/metrics2.cxx
 
