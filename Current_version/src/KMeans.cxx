@@ -81,14 +81,16 @@ void KMeans<T, Met>::compute(T tol) {
   size_t iter(0);
   int** old_centr = fill_centroids();
   // cimg_library::CImg<T>* old_output = new cimg_library::CImg<T>(output);
-  fill_output();
+  // fill_output();
+  cimg_library::CImgDisplay disp(output, "algorithm computing");
   // output.display("iteration 0");
   output.save_png("../images/before.png");
   // bool stop(compare_centroids(diff_centroids(old_centr), tol));
   double diff(diff_centroids(old_centr));
   double old_diff(1.0), error(1);
-  bool stop(error < tol);
-  while (iter < max_iter && !stop) {
+  bool stop(false);
+  while (iter < max_iter && !stop && !disp.is_closed()) {
+    output.display(disp);
     iter++;
     std::cout << "start of iteration " << iter << '\n';
     // old_output = new cimg_library::CImg<T>(output);
@@ -109,6 +111,7 @@ void KMeans<T, Met>::compute(T tol) {
   std::cout << "the number of clusters is " << nb_clusters << '\n';
   // output.display("end of the algorithm");
   output.save_png("../images/after.png");
+  output.display(disp, "end of algorithm");
 }
 
 // Private methods
@@ -136,13 +139,14 @@ to the clusters associated with the pixel.
 */
 template <typename T, typename Met>
 void KMeans<T, Met>::fill_output() {
+  T min_dist, distance;
   for (size_t x = 0; x < width; x++) {
     for (size_t y = 0; y < height; y++) {
       for (size_t z = 0; z < depth; z++) {
-        T min_dist = get_distance(0,x,y,z);
+        min_dist = get_distance(0,x,y,z);
         output(x,y,z) = clusters[1];
         for (size_t i = 0; i < nb_clusters; i++) {
-          T distance = get_distance(i,x,y,z);
+          distance = get_distance(i,x,y,z);
           if (distance < min_dist) {
             min_dist = distance;
             output(x,y,z) = clusters[i+1];
