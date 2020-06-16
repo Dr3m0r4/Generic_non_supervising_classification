@@ -39,9 +39,8 @@ private:
   void grey(); // fill the image with average grey to be worked with
   void fill_output();
   void compute_centroids();
-  int** fill_centroids();
   // double** diff_centroids(int** old_centr);
-  double diff_centroids(int** old_centr);
+  double diff_centroids();
   bool compare_centroids(double** diff, double tol);
 private:
   cimg_library::CImg<T> img;
@@ -51,9 +50,10 @@ private:
   // int** centroids;
   // T* clusters;
   std::vector<Pixel<T>> centroids;
+  std::vector<Pixel<T>> old_centr;
   std::vector<T> clusters;
   std::vector<Pixel<T>>* vect_p;
-  const T max_value = 255;
+  T max_value;
 };
 
 

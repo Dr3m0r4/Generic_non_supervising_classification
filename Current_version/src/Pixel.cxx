@@ -7,6 +7,14 @@ Pixel<T>::Pixel() {
 }
 
 template <typename T>
+Pixel<T>::Pixel(const Pixel& p) {
+  this->x = p.getX();
+  this->y = p.getY();
+  this->z = p.getZ();
+  this->v = p.getV();
+}
+
+template <typename T>
 Pixel<T>::Pixel(T a, T b, T c, T v) {
   this->x = a;
   this->y = b;

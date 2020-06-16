@@ -6,6 +6,7 @@ class Pixel {
 public:
   // Constructors
   Pixel();
+  Pixel(const Pixel& p);
   Pixel(T a, T b, T c, T v);
   // Affectation
   void assign(T a, T b, T c, T v);

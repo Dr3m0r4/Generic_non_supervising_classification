@@ -29,16 +29,19 @@ T Non_Euclidian<T>::operator()(Pixel<T> a, Pixel<T> b) const {
 template <typename T>
 T Linf<T>::operator()(Pixel<T> a, Pixel<T> b) const {
   T result(0);
-  for (size_t i = 0; i < 4; i++) {
+  // for (size_t i = 0; i < 4; i++) {
+  for (size_t i = 0; i < 3; i++) {
     result = std::fmax(result, std::abs(b[i]-a[i]));
   }
+  result = std::fmax(result, std::abs(b[3]-a[3])/20);
   return result;
 }
 
 template <typename T>
 T Lone<T>::operator()(Pixel<T> a, Pixel<T> b) const {
   T result(0);
-  for (size_t i = 0; i < 4; i++) {
+  // for (size_t i = 0; i < 4; i++) {
+  for (size_t i = 0; i < 3; i++) {
     result += std::abs(b[i]-a[i]);
   }
   return result;

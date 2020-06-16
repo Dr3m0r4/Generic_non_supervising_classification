@@ -5,11 +5,13 @@ KMeans<T, Met>::KMeans(cimg_library::CImg<T> image, int nb_c, size_t itermax) {
   nb_clusters = nb_c;
   width = img.width(); height = img.height(); depth = img.depth();
   spectrum = img.spectrum();
+  max_value = std::fmin(255,std::fmin(width, std::fmin(height, std::fmax(depth, std::fmin(width, height)))));
   // centroids = new int*[nb_clusters];
   // clusters = new T[nb_clusters+1];
   vect_p = new std::vector<Pixel<T>>[nb_clusters];
 
   output.assign(cimg_library::CImg<T>(width,height,depth,1,0));
+  old_centr = std::vector<Pixel<T>> ();
   // clusters[0] = 0;
   clusters.push_back(0);
   for (size_t i = 0; i < nb_clusters; i++) {
@@ -20,7 +22,7 @@ KMeans<T, Met>::KMeans(cimg_library::CImg<T> image, int nb_c, size_t itermax) {
       (T) (rand() % width),
       (T) (rand() % height),
       (T) (rand() % depth),
-      (T) (rand() % (int)max_value)
+      (T) (rand() % (int) max_value)
     ));
     // centroids.push_back(new T[4]);
     // centroids[i][0] = (T) (rand() % width);
@@ -79,39 +81,36 @@ T KMeans<T, Met>::get_distance(int i, int x, int y) const {
 template <typename T, typename Met>
 void KMeans<T, Met>::compute(T tol) {
   size_t iter(0);
-  int** old_centr = fill_centroids();
+  old_centr = centroids;
   // cimg_library::CImg<T>* old_output = new cimg_library::CImg<T>(output);
   // fill_output();
   cimg_library::CImgDisplay disp(output, "algorithm computing");
   // output.display("iteration 0");
+  this->fill_output();
   output.save_png("../images/before.png");
   // bool stop(compare_centroids(diff_centroids(old_centr), tol));
-  double diff(diff_centroids(old_centr));
+  double diff(diff_centroids());
   double old_diff(1.0), error(1);
   bool stop(false);
   while (iter < max_iter && !stop && !disp.is_closed()) {
     output.display(disp);
     iter++;
     std::cout << "start of iteration " << iter << '\n';
-    // old_output = new cimg_library::CImg<T>(output);
-    // display_centroids();
-    old_diff = diff;
-    old_centr = fill_centroids();
+    // old_diff = diff;
+    old_centr = centroids;
     this->compute_centroids();
     this->fill_output();
-    // output.display("iteration "+char(iter));
-    // display_centroids();
-    // stop = compare_centroids(diff_centroids(old_centr), tol);
-    diff = diff_centroids(old_centr);
-    error = std::abs(old_diff-diff);
-    stop = error < tol;
-    std::cout << ">>> iteration " << iter << " with an error of " << error << '\n';
+    diff = diff_centroids();
+    // error = std::abs(old_diff-diff);
+    // stop = error < tol;
+    stop = diff < tol;
+    std::cout << ">>> iteration " << iter << " with an error of " << diff << '\n';
   }
   std::cout << "the number of iterations is : " << iter << " and the difference is : " << diff << '\n';
   std::cout << "the number of clusters is " << nb_clusters << '\n';
   // output.display("end of the algorithm");
   output.save_png("../images/after.png");
-  output.display(disp, "end of algorithm");
+  output.display("end of algorithm");
 }
 
 // Private methods
@@ -126,7 +125,7 @@ void KMeans<T, Met>::grey() {
         }
         sum /= spectrum;
         for (size_t c = 0; c < spectrum; c++) {
-          img(x,y,z,c) = sum;
+          img(x,y,z,c) = (sum * max_value)/255;
         }
       }
     }
@@ -171,7 +170,7 @@ void KMeans<T, Met>::compute_centroids() {
   Pixel<T> p(0,0,0,0);
   T* sum = new T[4];
   size_t size(0);
-  bool suppr(false);
+  bool suppr(true);
   for (size_t i = 0; i < nb_clusters; i++) {
     for (size_t j = 0; j < 3; j++) {
       sum[j] = 0;
@@ -191,37 +190,31 @@ void KMeans<T, Met>::compute_centroids() {
       for (size_t j = 0; j < 4; j++) {
         centroids[i][j] = sum[j]/size;
       }
-    } else if (!suppr) {
+    } else if (suppr) {
       // std::cout << "tes baise" << '\n';
+      old_centr.erase(old_centr.begin()+i);
       centroids.erase(centroids.begin()+i);
       clusters.erase(clusters.begin()+i+1);
       nb_clusters--;
       i--;
-      suppr = true;
+      suppr = false;
     }
   }
-}
-
-template <typename T, typename Met>
-int** KMeans<T, Met>::fill_centroids() {
-  int** result = new int*[nb_clusters];
-  for (size_t i = 0; i < nb_clusters; i++) {
-    result[i] = new int[3];
-    for (size_t j = 0; j < 3; j++) {
-      result[i][j] = centroids[i][j];
-    }
-  }
-  return result;
 }
 
 // #include <cmath>
 template <typename T, typename Met>
-double KMeans<T, Met>::diff_centroids(int** old_centr) {
+double KMeans<T, Met>::diff_centroids() {
   // double** result = new double*[nb_clusters];
   double result(0);
+  if (centroids.size() != old_centr.size()) {
+    std::cout << "show time" << '\n';
+    std::cout << "centroids size : " << centroids.size() << '\n';
+    std::cout << "old centroids size : " << old_centr.size() << '\n';
+  }
   for (size_t i = 0; i < nb_clusters; i++) {
     // result[i] = new double[3];
-    for (size_t j = 0; j < 3; j++) {
+    for (size_t j = 0; j < 4; j++) {
       // result[i][j] = abs(centroids[i][j]-old_centr[i][j]);
       result += std::pow(centroids[i][j]-old_centr[i][j],2);
     }
