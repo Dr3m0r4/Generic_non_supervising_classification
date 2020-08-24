@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/project.dir/src/KMeans.cpp.o  -o project  -lX11 -lpthread -lpthread -lstdc++ -lm 

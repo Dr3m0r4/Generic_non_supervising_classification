@@ -20,7 +20,7 @@ elif [[ $choice == "n" || $choice == "N" ]]; then
   if [[ -f exec.sh ]]; then
     ./exec.sh
   else
-    ./project
+    ./KMeans
   fi
 else
   while [[ 1 ]]; do

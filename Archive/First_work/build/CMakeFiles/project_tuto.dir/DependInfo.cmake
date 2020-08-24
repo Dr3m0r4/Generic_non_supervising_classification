@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/dr3m/Travaux/Cimg_generic/src/ML.cpp" "/home/dr3m/Travaux/Cimg_generic/build/CMakeFiles/project_tuto.dir/src/ML.cpp.o"
-  "/home/dr3m/Travaux/Cimg_generic/src/tuto.cpp" "/home/dr3m/Travaux/Cimg_generic/build/CMakeFiles/project_tuto.dir/src/tuto.cpp.o"
+  "/home/dr3m/Grive/travaux/CImg_ISIMA/Archive/First_work/src/ML.cpp" "/home/dr3m/Grive/travaux/CImg_ISIMA/Archive/First_work/build/CMakeFiles/project_tuto.dir/src/ML.cpp.o"
+  "/home/dr3m/Grive/travaux/CImg_ISIMA/Archive/First_work/src/tuto.cpp" "/home/dr3m/Grive/travaux/CImg_ISIMA/Archive/First_work/build/CMakeFiles/project_tuto.dir/src/tuto.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

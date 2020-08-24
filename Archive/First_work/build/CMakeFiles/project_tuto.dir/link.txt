@@ -1,1 +1,1 @@
-/usr/bin/cc   -rdynamic CMakeFiles/project_tuto.dir/src/tuto.cpp.o CMakeFiles/project_tuto.dir/src/ML.cpp.o  -o project_tuto  -lX11 -lpthread -lpthread -lstdc++ -lm 
+/usr/bin/cc   -rdynamic CMakeFiles/project_tuto.dir/src/tuto.cpp.o CMakeFiles/project_tuto.dir/src/ML.cpp.o  -o project_tuto -lX11 -lpthread -lpthread -lstdc++ -lm 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/dr3m/Travaux/Cimg_generic/Current_version
+# Install script for directory: /home/dr3m/Grive/travaux/CImg_ISIMA/Current_version
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/dr3m/Travaux/Cimg_generic/Current_version/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/dr3m/Grive/travaux/CImg_ISIMA/Current_version/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

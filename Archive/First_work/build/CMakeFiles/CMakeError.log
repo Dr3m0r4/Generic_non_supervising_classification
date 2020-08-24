@@ -1,58 +1,51 @@
-Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
-Change Dir: /home/dr3m/Travaux/Cimg_generic/build/CMakeFiles/CMakeTmp
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/dr3m/Grive/travaux/CImg_ISIMA/Archive/First_work/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_33831/fast && /usr/bin/make -f CMakeFiles/cmTC_33831.dir/build.make CMakeFiles/cmTC_33831.dir/build
-make[1] : on entre dans le répertoire « /home/dr3m/Travaux/Cimg_generic/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_33831.dir/src.c.o
-/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_33831.dir/src.c.o   -c /home/dr3m/Travaux/Cimg_generic/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_33831
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_33831.dir/link.txt --verbose=1
-/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_33831.dir/src.c.o  -o cmTC_33831 
-/usr/bin/ld : CMakeFiles/cmTC_33831.dir/src.c.o : dans la fonction « main » :
-src.c:(.text+0x46) : référence indéfinie vers « pthread_create »
-/usr/bin/ld : src.c:(.text+0x52) : référence indéfinie vers « pthread_detach »
-/usr/bin/ld : src.c:(.text+0x63) : référence indéfinie vers « pthread_join »
+Run Build Command:"/usr/bin/make" "cmTC_37487/fast"
+/usr/bin/make -f CMakeFiles/cmTC_37487.dir/build.make CMakeFiles/cmTC_37487.dir/build
+make[1] : on entre dans le répertoire « /home/dr3m/Grive/travaux/CImg_ISIMA/Archive/First_work/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_37487.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_37487.dir/CheckSymbolExists.c.o   -c /home/dr3m/Grive/travaux/CImg_ISIMA/Archive/First_work/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_37487
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_37487.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_37487.dir/CheckSymbolExists.c.o  -o cmTC_37487 
+/usr/bin/ld: CMakeFiles/cmTC_37487.dir/CheckSymbolExists.c.o: in function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_33831.dir/build.make:87: cmTC_33831] Error 1
-make[1] : on quitte le répertoire « /home/dr3m/Travaux/Cimg_generic/build/CMakeFiles/CMakeTmp »
-make: *** [Makefile:121: cmTC_33831/fast] Error 2
+make[1]: *** [CMakeFiles/cmTC_37487.dir/build.make:87: cmTC_37487] Error 1
+make[1] : on quitte le répertoire « /home/dr3m/Grive/travaux/CImg_ISIMA/Archive/First_work/build/CMakeFiles/CMakeTmp »
+make: *** [Makefile:121: cmTC_37487/fast] Error 2
 
-
-Source file was:
+File /home/dr3m/Grive/travaux/CImg_ISIMA/Archive/First_work/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
 #include <pthread.h>
 
-void* test_func(void* data)
+int main(int argc, char** argv)
 {
-  return data;
-}
-
-int main(void)
-{
-  pthread_t thread;
-  pthread_create(&thread, NULL, test_func, NULL);
-  pthread_detach(thread);
-  pthread_join(thread, NULL);
-  pthread_atfork(NULL, NULL, NULL);
-  pthread_exit(NULL);
-
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
   return 0;
+#endif
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/dr3m/Travaux/Cimg_generic/build/CMakeFiles/CMakeTmp
+Change Dir: /home/dr3m/Grive/travaux/CImg_ISIMA/Archive/First_work/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_b81e9/fast && /usr/bin/make -f CMakeFiles/cmTC_b81e9.dir/build.make CMakeFiles/cmTC_b81e9.dir/build
-make[1] : on entre dans le répertoire « /home/dr3m/Travaux/Cimg_generic/build/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_b81e9.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_b81e9.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_b81e9
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b81e9.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_b81e9.dir/CheckFunctionExists.c.o  -o cmTC_b81e9  -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTC_4b31e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_4b31e.dir/build.make CMakeFiles/cmTC_4b31e.dir/build
+make[1] : on entre dans le répertoire « /home/dr3m/Grive/travaux/CImg_ISIMA/Archive/First_work/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_4b31e.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_4b31e.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.13/Modules/CheckFunctionExists.c
+Linking C executable cmTC_4b31e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4b31e.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_4b31e.dir/CheckFunctionExists.c.o  -o cmTC_4b31e -lpthreads 
 /usr/bin/ld : ne peut trouver -lpthreads
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_b81e9.dir/build.make:87: cmTC_b81e9] Error 1
-make[1] : on quitte le répertoire « /home/dr3m/Travaux/Cimg_generic/build/CMakeFiles/CMakeTmp »
-make: *** [Makefile:121: cmTC_b81e9/fast] Error 2
-
+make[1]: *** [CMakeFiles/cmTC_4b31e.dir/build.make:87: cmTC_4b31e] Error 1
+make[1] : on quitte le répertoire « /home/dr3m/Grive/travaux/CImg_ISIMA/Archive/First_work/build/CMakeFiles/CMakeTmp »
+make: *** [Makefile:121: cmTC_4b31e/fast] Error 2
 
 

@@ -15,12 +15,15 @@ set ( CMAKE_THREAD_LIBS_INIT "-lX11 -lpthread ${CMAKE_THREAD_LIBS_INIT}")
 # C++11 #-------------------------------------------------------------------------------------------
 include ( CheckCXXCompilerFlag )
 
+check_cxx_compiler_flag ( "-std=gnu++2a" COMPILER_SUPPORTS_CPP2A )
 check_cxx_compiler_flag ( "-std=gnu++14" COMPILER_SUPPORTS_CPP14 )
 check_cxx_compiler_flag ( "-std=gnu++1y" COMPILER_SUPPORTS_CPP1Y )
 check_cxx_compiler_flag ( "-std=gnu++11" COMPILER_SUPPORTS_CPP11 )
 check_cxx_compiler_flag ( "-std=gnu++0x" COMPILER_SUPPORTS_CPP0X )
 
 if ( COMPILER_SUPPORTS_CPP14 )
+  set ( CMAKE_CXX_FLAGS "-std=gnu++2a ${CMAKE_CXX_FLAGS}" )
+elseif ( COMPILER_SUPPORTS_CPP14 )
  set ( CMAKE_CXX_FLAGS "-std=gnu++14 ${CMAKE_CXX_FLAGS}" )
 elseif ( COMPILER_SUPPORTS_CPP1Y )
  set ( CMAKE_CXX_FLAGS "-std=gnu++1y ${CMAKE_CXX_FLAGS}" )
@@ -36,12 +39,11 @@ message ( STATUS "Compiler flags: ${CMAKE_CXX_FLAGS}" )
 
 # Sources #-----------------------------------------------------------------------------------------
 set ( ZZ3_HEADERS
-      src/CImg.h
-      src/Functions.hpp
-      src/KMeans.hpp
-      src/metrics2.hpp
-      src/MLearning.hpp
-      src/Pixel.hpp
+        src/CImg.h
+        src/KMeans.hpp
+        src/Computation.hpp
+        src/Descriptors.hpp
+        src/Metric.hpp
     )
 
 set ( ZZ3_SOURCES
@@ -51,7 +53,7 @@ include_directories ( src/ )
 
 # Executables #-------------------------------------------------------------------------------------
 add_executable ( ${CMAKE_PROJECT_NAME}
-                 src/KMeans.cpp
+                 test/main.cpp
                  ${ZZ3_HEADERS}
                  ${ZZ3_SOURCES}
                )

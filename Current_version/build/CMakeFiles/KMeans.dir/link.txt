@@ -1,1 +1,1 @@
-/usr/bin/cc   -rdynamic CMakeFiles/KMeans.dir/src/KMeans.cpp.o  -o KMeans  -lX11 -lpthread -lpthread -lstdc++ -lm 
+/usr/bin/cc   -rdynamic CMakeFiles/KMeans.dir/test/main.cpp.o  -o KMeans -lX11 -lpthread -lpthread -lstdc++ -lm 

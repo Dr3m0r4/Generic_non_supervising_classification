@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/KMeans.dir/src/KMeans.cpp.o"
-  "KMeans"
+  "CMakeFiles/KMeans.dir/test/main.cpp.o"
   "KMeans.pdb"
+  "KMeans"
 )
 
 # Per-language clean rules from dependency scanning.
